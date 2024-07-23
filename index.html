@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confronto Prodotti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Confronto Prodotti</h1>
+    <table id="comparisonTable">
+        <thead>
+            <tr>
+                <th>Caratteristiche</th>
+                <th data-product="smart-retail">Smart Retail</th>
+                <th data-product="senna">Senna</th>
+                <th data-product="neva-elba">Neva/Elba</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-feature="feature1">
+                <td onclick="toggleFilter('feature1')">Caratteristica 1</td>
+                <td class="smart-retail feature1"><span class="dot"></span></td>
+                <td class="senna"></td>
+                <td class="neva-elba feature1"><span class="dot"></span></td>
+            </tr>
+            <tr data-feature="feature2">
+                <td onclick="toggleFilter('feature2')">Caratteristica 2</td>
+                <td class="smart-retail"></td>
+                <td class="senna feature2"><span class="dot"></span></td>
+                <td class="neva-elba feature2"><span class="dot"></span></td>
+            </tr>
+            <tr data-feature="feature3">
+                <td onclick="toggleFilter('feature3')">Caratteristica 3</td>
+                <td class="smart-retail feature3"><span class="dot"></span></td>
+                <td class="senna feature3"><span class="dot"></span></td>
+                <td class="neva-elba"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
