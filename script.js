@@ -10,6 +10,7 @@ function toggleFilter(feature) {
         featureCell.classList.add('active-feature');
     }
     applyFilters();
+    updateSummary();
 }
 
 function applyFilters() {
@@ -40,3 +41,15 @@ function applyFilters() {
         });
     });
 }
+
+function updateSummary() {
+    const selectedFeaturesList = document.getElementById('selectedFeatures');
+    selectedFeaturesList.innerHTML = '';
+    activeFilters.forEach(feature => {
+        const featureName = document.querySelector(`[onclick="toggleFilter('${feature}')"]`).innerText;
+        const listItem = document.createElement('li');
+        listItem.innerText = featureName;
+        selectedFeaturesList.appendChild(listItem);
+    });
+}
+
