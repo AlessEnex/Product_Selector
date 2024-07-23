@@ -8,37 +8,52 @@
 </head>
 <body>
     <h1>Confronto Prodotti</h1>
-    <table id="comparisonTable">
-        <thead>
-            <tr>
-                <th>Caratteristiche</th>
-                <th data-product="smart-retail">Smart Retail</th>
-                <th data-product="senna">Senna</th>
-                <th data-product="neva-elba">Neva/Elba</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr data-feature="feature1">
-                <td onclick="toggleFilter('feature1')">Caratteristica 1</td>
-                <td class="smart-retail feature1"><span class="dot"></span></td>
-                <td class="senna"></td>
-                <td class="neva-elba feature1"><span class="dot"></span></td>
-            </tr>
-            <tr data-feature="feature2">
-                <td onclick="toggleFilter('feature2')">Caratteristica 2</td>
-                <td class="smart-retail"></td>
-                <td class="senna feature2"><span class="dot"></span></td>
-                <td class="neva-elba feature2"><span class="dot"></span></td>
-            </tr>
-            <tr data-feature="feature3">
-                <td onclick="toggleFilter('feature3')">Caratteristica 3</td>
-                <td class="smart-retail feature3"><span class="dot"></span></td>
-                <td class="senna feature3"><span class="dot"></span></td>
-                <td class="neva-elba"></td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="container">
+        <table id="comparisonTable">
+            <thead>
+                <tr>
+                    <th>Caratteristiche</th>
+                    <th data-product="smart-retail">Smart Retail</th>
+                    <th data-product="senna">Senna</th>
+                    <th data-product="neva-elba">Neva/Elba</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-feature="feature1">
+                    <td onclick="toggleFilter('feature1')">Caratteristica 1</td>
+                    <td class="smart-retail feature1"><span class="dot"></span></td>
+                    <td class="senna"></td>
+                    <td class="neva-elba feature1"><span class="dot"></span></td>
+                </tr>
+                <tr data-feature="feature2">
+                    <td onclick="toggleFilter('feature2')">Caratteristica 2</td>
+                    <td class="smart-retail"></td>
+                    <td class="senna feature2"><span class="dot"></span></td>
+                    <td class="neva-elba feature2"><span class="dot"></span></td>
+                </tr>
+                <!-- Other rows go here -->
+                <tr data-feature="feature3">
+                    <td onclick="toggleFilter('feature3')">Caratteristica 3</td>
+                    <td class="smart-retail feature3"><span class="dot"></span></td>
+                    <td class="senna feature3"><span class="dot"></span></td>
+                    <td class="neva-elba"></td>
+                </tr>
+                <!-- Add other rows up to feature10 -->
+                <tr class="separator"><td colspan="4"></td></tr>
+                <tr data-feature="feature11">
+                    <td onclick="toggleFilter('feature11')">Caratteristica 11</td>
+                    <td class="smart-retail feature11"><span class="dot"></span></td>
+                    <td class="senna"></td>
+                    <td class="neva-elba feature11"><span class="dot"></span></td>
+                </tr>
+                <!-- Add other rows from feature12 to feature20 -->
+            </tbody>
+        </table>
+        <div class="summary">
+            <h2>Caratteristiche Selezionate</h2>
+            <ul id="selectedFeatures"></ul>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
