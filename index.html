@@ -25,20 +25,31 @@
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Heat Recovery</td>
                 </tr>
-                <tr data-feature="feature1">
-                    <td onclick="toggleFilter('feature1')">Heat Recovery 1 (Tap Water)
-                            <span class="info-icon" onclick="showDialog('Feature 1', 'This feature provides heat recovery for tap water.')">ℹ️</span>
-                    </td>
-                    <td class="smart-retail feature1"><span class="dot"></span></td>
-                    <td class="senna feature1"><span class="dot"></span></td>
-                    <td class="neva-elba feature1"><span class="dot"></span></td>
-                </tr>
-                <tr data-feature="feature2">
-                    <td onclick="toggleFilter('feature2')">Heat Recovery 2 (Space Heating)</td>
-                    <td class="smart-retail feature2"><span class="dot"></span></td></td>
-                    <td class="senna feature2"><span class="dot"></span></td>
-                    <td class="neva-elba feature2"><span class="dot"></span></td>
-                </tr>
+
+<tr data-feature="feature1">
+    <td>
+        Heat Recovery 1 (Tap Water)
+        <span class="info-icon" data-feature-id="feature1" onclick="showDialog(this)">
+            ℹ️
+        </span>
+    </td>
+    <td class="smart-retail feature1"><span class="dot"></span></td>
+    <td class="senna feature1"><span class="dot"></span></td>
+    <td class="neva-elba feature1"><span class="dot"></span></td>
+</tr>
+<tr data-feature="feature2">
+    <td>
+        Heat Recovery 2 (Space Heating)
+        <span class="info-icon" data-feature-id="feature2" onclick="showDialog(this)">
+            ℹ️
+        </span>
+    </td>
+    <td class="smart-retail feature2"><span class="dot"></span></td>
+    <td class="senna feature2"><span class="dot"></span></td>
+    <td class="neva-elba feature2"><span class="dot"></span></td>
+</tr>
+
+                
 
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Maximum allowed pressures</td>
