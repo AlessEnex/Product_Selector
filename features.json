@@ -1,0 +1,14 @@
+{
+    "feature1": {
+        "title": "Heat Recovery 1",
+        "description": "This feature provides heat recovery for tap water, improving energy efficiency."
+    },
+    "feature2": {
+        "title": "Heat Recovery 2",
+        "description": "This feature recovers heat for space heating applications, reducing energy consumption."
+    },
+    "feature3": {
+        "title": "HP 130 bar",
+        "description": "Allows high-pressure operation up to 130 bar for enhanced system reliability."
+    }
+}
