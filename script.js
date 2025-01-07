@@ -42,15 +42,7 @@ function applyFilters() {
     });
 }
 
-document.querySelectorAll('select').forEach(select => {
-    select.addEventListener('change', event => {
-        const selectedBrand = event.target.value;
-        console.log(`Selected brand: ${selectedBrand}`);
-        // Aggiorna la lista delle caratteristiche selezionate, se necessario
-        const featureList = document.getElementById('selectedFeatures');
-        featureList.innerHTML = `<li>${selectedBrand} selected</li>`;
-    });
-});
+
 
 function updateSummary() {
     const selectedFeaturesList = document.getElementById('selectedFeatures');
