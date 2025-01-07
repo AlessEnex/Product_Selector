@@ -1,7 +1,8 @@
-let activeFilters = new Set();
-let featureDescriptions = {}; // Dati caricati dal JSON
+// Variabili globali
+let activeFilters = new Set(); // Per tenere traccia delle feature attive
+let featureDescriptions = {}; // Per caricare i dati dal JSON
 
-// Carica le descrizioni delle feature da JSON
+// Caricamento delle descrizioni delle feature da JSON
 fetch('features.json')
     .then(response => {
         if (!response.ok) {
@@ -14,55 +15,34 @@ fetch('features.json')
     })
     .catch(error => console.error('Errore nel caricamento delle feature:', error));
 
-function toggleFilter(feature) {
-    const featureCell = document.querySelector(`[onclick="toggleFilter('${feature}')"]`);
-    if (activeFilters.has(feature)) {
-        activeFilters.delete(feature);
+// Funzione per attivare/disattivare una feature
+function toggleFilter(featureId) {
+    const featureCell = document.querySelector(`[onclick="toggleFilter('${featureId}')"]`);
+
+    if (activeFilters.has(featureId)) {
+        activeFilters.delete(featureId);
         featureCell.classList.remove('active-feature');
     } else {
-        activeFilters.add(feature);
+        activeFilters.add(featureId);
         featureCell.classList.add('active-feature');
     }
-    applyFilters();
+
     updateSummary();
 }
 
-function applyFilters() {
-    const products = ['smart-retail', 'senna', 'neva-elba'];
-    products.forEach(product => {
-        const shouldHide = Array.from(activeFilters).some(feature => {
-            const cells = document.querySelectorAll(`.${product}.${feature}`);
-            return cells.length === 0;
-        });
-
-        const productHeader = document.querySelector(`[data-product="${product}"]`);
-        if (shouldHide) {
-            productHeader.classList.add('inactive-header');
-        } else {
-            productHeader.classList.remove('inactive-header');
-        }
-
-        const productCells = document.querySelectorAll(`.${product}`);
-        productCells.forEach(cell => {
-            const dot = cell.querySelector('.dot');
-            if (dot) {
-                if (shouldHide) {
-                    dot.classList.add('inactive-dot');
-                } else {
-                    dot.classList.remove('inactive-dot');
-                }
-            }
-        });
-    });
-}
-
+// Aggiorna la lista delle feature selezionate
 function updateSummary() {
     const selectedFeaturesList = document.getElementById('selectedFeatures');
-    selectedFeaturesList.innerHTML = '';
-    activeFilters.forEach(feature => {
-        const featureName = document.querySelector(`[onclick="toggleFilter('${feature}')"]`).innerText;
+    selectedFeaturesList.innerHTML = ''; // Resetta la lista
+
+    activeFilters.forEach(featureId => {
+        const featureTitle = featureDescriptions[featureId]?.title || "Unknown Feature";
+
         const listItem = document.createElement('li');
-        listItem.innerText = featureName;
+        listItem.innerText = featureTitle;
+        listItem.setAttribute('data-feature-id', featureId);
+        listItem.onclick = () => toggleFilter(featureId); // Consente la rimozione cliccando sull'opzione nella lista
+
         selectedFeaturesList.appendChild(listItem);
     });
 }
@@ -86,6 +66,7 @@ function showDialog(element) {
             <button class="dialog-close" onclick="closeDialog(this)">Close</button>
         </div>
     `;
+
     document.body.appendChild(dialogOverlay);
     dialogOverlay.style.display = 'flex';
 }
