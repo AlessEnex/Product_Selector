@@ -55,3 +55,46 @@ function updateSummary() {
     });
 }
 
+
+// Oggetto con le descrizioni delle caratteristiche
+const featureDescriptions = {
+    feature1: {
+        title: "Heat Recovery 1",
+        description: "This feature provides heat recovery for tap water, allowing energy savings and efficiency improvements."
+    },
+    feature2: {
+        title: "Heat Recovery 2",
+        description: "This feature recovers heat for space heating applications, reducing overall energy consumption."
+    }
+};
+
+
+// Funzione per mostrare la finestra di dialogo
+function showDialog(element) {
+    const featureId = element.getAttribute('data-feature-id'); // Leggi l'ID dal pulsante cliccato
+    const { title, description } = featureDescriptions[featureId] || {}; // Recupera i dati, fallback a {}
+
+    if (!title || !description) {
+        console.error(`No data found for feature ID: ${featureId}`);
+        return;
+    }
+
+    const dialogOverlay = document.createElement('div');
+    dialogOverlay.className = 'dialog-overlay';
+    dialogOverlay.innerHTML = `
+        <div class="dialog-box">
+            <h3>${title}</h3>
+            <p>${description}</p>
+            <button class="dialog-close" onclick="closeDialog(this)">Close</button>
+        </div>
+    `;
+    document.body.appendChild(dialogOverlay);
+    dialogOverlay.style.display = 'flex'; // Mostra l'overlay
+}
+
+// Funzione per chiudere la finestra di dialogo
+function closeDialog(button) {
+    const dialogOverlay = button.closest('.dialog-overlay');
+    document.body.removeChild(dialogOverlay); // Rimuove l'overlay
+}
+
