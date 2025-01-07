@@ -1,4 +1,18 @@
 let activeFilters = new Set();
+let featureDescriptions = {}; // Dati caricati dal JSON
+
+// Carica le descrizioni delle feature da JSON
+fetch('features.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        featureDescriptions = data;
+    })
+    .catch(error => console.error('Errore nel caricamento delle feature:', error));
 
 function toggleFilter(feature) {
     const featureCell = document.querySelector(`[onclick="toggleFilter('${feature}')"]`);
@@ -42,8 +56,6 @@ function applyFilters() {
     });
 }
 
-
-
 function updateSummary() {
     const selectedFeaturesList = document.getElementById('selectedFeatures');
     selectedFeaturesList.innerHTML = '';
@@ -54,20 +66,6 @@ function updateSummary() {
         selectedFeaturesList.appendChild(listItem);
     });
 }
-
-
-// Oggetto con le descrizioni delle caratteristiche
-const featureDescriptions = {
-    feature1: {
-        title: "Heat Recovery 1",
-        description: "This feature provides heat recovery for tap water, allowing energy savings and efficiency improvements."
-    },
-    feature2: {
-        title: "Heat Recovery 2",
-        description: "This feature recovers heat for space heating applications, reducing overall energy consumption."
-    }
-};
-
 
 // Funzione per mostrare la finestra di dialogo
 function showDialog(element) {
@@ -96,20 +94,4 @@ function showDialog(element) {
 function closeDialog(button) {
     const dialogOverlay = button.closest('.dialog-overlay');
     document.body.removeChild(dialogOverlay);
-}
-
-// Funzione per selezionare una feature
-function selectFeature(featureId) {
-    const selectedFeaturesList = document.getElementById('selectedFeatures');
-
-// Controlla se la feature è già selezionata
-    if (document.querySelector(`#selectedFeatures li[data-feature-id="${featureId}"]`)) {
-        return; // Già selezionata, non fare nulla
-    }
-
-    // Aggiungi la feature alla lista
-    const li = document.createElement('li');
-    li.setAttribute('data-feature-id', featureId);
-    li.textContent = featureDescriptions[featureId]?.title || "Unknown Feature";
-    selectedFeaturesList.appendChild(li);
 }
