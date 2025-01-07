@@ -41,7 +41,9 @@ function updateSummary() {
         const listItem = document.createElement('li');
         listItem.innerText = featureTitle;
         listItem.setAttribute('data-feature-id', featureId);
-        listItem.onclick = () => toggleFilter(featureId); // Consente la rimozione cliccando sull'opzione nella lista
+        listItem.onclick = () => {
+            toggleFilter(featureId); // Rimuove la feature cliccata
+        };
 
         selectedFeaturesList.appendChild(listItem);
     });
