@@ -48,12 +48,12 @@ select {
     border-radius: 4px;
 }
 
-/*th, td {*/
+th, td {
 /*    width: 25%;*/
-/*    padding: 15px;*/
-/*    text-align: center;*/
-/*    border-bottom: 1px solid #ddd;*/
-/*} */
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+} 
 
 th:first-child, td:first-child {
     width: 40%; /* La prima colonna sarà il 40% della larghezza totale */
