@@ -71,8 +71,8 @@ const featureDescriptions = {
 
 // Funzione per mostrare la finestra di dialogo
 function showDialog(element) {
-    const featureId = element.getAttribute('data-feature-id'); // Leggi l'ID dal pulsante cliccato
-    const { title, description } = featureDescriptions[featureId] || {}; // Recupera i dati, fallback a {}
+    const featureId = element.getAttribute('data-feature-id');
+    const { title, description } = featureDescriptions[featureId] || {};
 
     if (!title || !description) {
         console.error(`No data found for feature ID: ${featureId}`);
@@ -89,12 +89,27 @@ function showDialog(element) {
         </div>
     `;
     document.body.appendChild(dialogOverlay);
-    dialogOverlay.style.display = 'flex'; // Mostra l'overlay
+    dialogOverlay.style.display = 'flex';
 }
 
 // Funzione per chiudere la finestra di dialogo
 function closeDialog(button) {
     const dialogOverlay = button.closest('.dialog-overlay');
-    document.body.removeChild(dialogOverlay); // Rimuove l'overlay
+    document.body.removeChild(dialogOverlay);
 }
 
+// Funzione per selezionare una feature
+function selectFeature(featureId) {
+    const selectedFeaturesList = document.getElementById('selectedFeatures');
+
+// Controlla se la feature è già selezionata
+    if (document.querySelector(`#selectedFeatures li[data-feature-id="${featureId}"]`)) {
+        return; // Già selezionata, non fare nulla
+    }
+
+    // Aggiungi la feature alla lista
+    const li = document.createElement('li');
+    li.setAttribute('data-feature-id', featureId);
+    li.textContent = featureDescriptions[featureId]?.title || "Unknown Feature";
+    selectedFeaturesList.appendChild(li);
+}
