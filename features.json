@@ -1,14 +1,18 @@
 {
     "feature1": {
         "title": "Heat Recovery 1",
-        "description": "This feature provides heat recovery for tap water, improving energy efficiency."
+        "description": "This feature provides heat recovery for tap water, allowing energy savings and efficiency improvements."
     },
     "feature2": {
         "title": "Heat Recovery 2",
-        "description": "This feature recovers heat for space heating applications, reducing energy consumption."
+        "description": "This feature recovers heat for space heating applications, reducing overall energy consumption."
     },
     "feature3": {
-        "title": "HP 130 bar",
-        "description": "Allows high-pressure operation up to 130 bar for enhanced system reliability."
+        "title": "High Pressure Side",
+        "description": "Supports operation at 120 or 130 bar for high-pressure applications."
+    },
+    "feature4": {
+        "title": "Air Conditioning Flooded",
+        "description": "Optimized air conditioning solutions using a flooded system."
     }
 }
