@@ -27,9 +27,9 @@
                 </tr>
 
 <tr data-feature="feature1">
-    <td>
+    <td onclick="selectFeature('feature1')">
         Heat Recovery 1 (Tap Water)
-        <span class="info-icon" data-feature-id="feature1" onclick="showDialog(this)">
+        <span class="info-icon" data-feature-id="feature1" onclick="event.stopPropagation(); showDialog(this)">
             ℹ️
         </span>
     </td>
@@ -37,6 +37,8 @@
     <td class="senna feature1"><span class="dot"></span></td>
     <td class="neva-elba feature1"><span class="dot"></span></td>
 </tr>
+
+                
 <tr data-feature="feature2">
     <td>
         Heat Recovery 2 (Space Heating)
