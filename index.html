@@ -10,7 +10,6 @@
     <h1>Confronto Prodotti</h1>
 
     <div class="container">
-        
         <table id="comparisonTable">
             <thead>
                 <tr>
@@ -22,43 +21,47 @@
             </thead>
             <tbody>
 
+                <!-- Heat Recovery -->
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Heat Recovery</td>
                 </tr>
 
-<tr data-feature="feature1">
-    <td onclick="selectFeature('feature1')">
-        Heat Recovery 1 (Tap Water)
-        <span class="info-icon" data-feature-id="feature1" onclick="event.stopPropagation(); showDialog(this)">
-            ℹ️
-        </span>
-    </td>
-    <td class="smart-retail feature1"><span class="dot"></span></td>
-    <td class="senna feature1"><span class="dot"></span></td>
-    <td class="neva-elba feature1"><span class="dot"></span></td>
-</tr>
+                <tr data-feature="feature1">
+                    <td onclick="selectFeature('feature1')">
+                        Heat Recovery 1 (Tap Water)
+                        <span class="info-icon" data-feature-id="feature1" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
+                    <td class="smart-retail feature1"><span class="dot"></span></td>
+                    <td class="senna feature1"><span class="dot"></span></td>
+                    <td class="neva-elba feature1"><span class="dot"></span></td>
+                </tr>
 
-                
-<tr data-feature="feature2">
-    <td>
-        Heat Recovery 2 (Space Heating)
-        <span class="info-icon" data-feature-id="feature2" onclick="showDialog(this)">
-            ℹ️
-        </span>
-    </td>
-    <td class="smart-retail feature2"><span class="dot"></span></td>
-    <td class="senna feature2"><span class="dot"></span></td>
-    <td class="neva-elba feature2"><span class="dot"></span></td>
-</tr>
+                <tr data-feature="feature2">
+                    <td onclick="selectFeature('feature2')">
+                        Heat Recovery 2 (Space Heating)
+                        <span class="info-icon" data-feature-id="feature2" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
+                    <td class="smart-retail feature2"><span class="dot"></span></td>
+                    <td class="senna feature2"><span class="dot"></span></td>
+                    <td class="neva-elba feature2"><span class="dot"></span></td>
+                </tr>
 
-                
-
+                <!-- Maximum allowed pressures -->
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Maximum allowed pressures</td>
                 </tr>
-            
+
                 <tr data-feature="feature3">
-                <td onclick="toggleFilter('feature3')">High Pressure Side</td>
+                    <td onclick="selectFeature('feature3')">
+                        High Pressure Side
+                        <span class="info-icon" data-feature-id="feature3" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
                     <td class="smart-retail feature3">
                         <select>
                             <option value="120">120</option>
@@ -79,65 +82,77 @@
                     </td>
                 </tr>
 
-
+                <!-- Special Integrated solutions -->
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Special Integrated solutions</td>
                 </tr>
+
                 <tr data-feature="feature4">
-                    <td onclick="toggleFilter('feature4')">Air Conditioning Flooded</td>
+                    <td onclick="selectFeature('feature4')">
+                        Air Conditioning Flooded
+                        <span class="info-icon" data-feature-id="feature4" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
                     <td class="smart-retail feature4"><span class="dot"></span></td>
                     <td class="senna feature4"><span class="dot"></span></td>
-                    <td class="neva-elba feature4"><span class="dot"></span></td></td>
+                    <td class="neva-elba feature4"><span class="dot"></span></td>
                 </tr>
 
+                <!-- Oil management -->
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Oil management</td>
                 </tr>
-                <tr data-feature="feature6">
-                    <td onclick="toggleFilter('feature6')">Level sensor on oil reserve</td>
-                    <td class="smart-retail"></td>
-                    <td class="senna feature6"><span class="dot"></span></td>
-                    <td class="neva-elba feature6"><span class="dot"></span></td></td>
-                </tr>
-                <tr data-feature="feature7">
-                    <td onclick="toggleFilter('feature7')">vuoto 7</td>
-                    <td class="smart-retail"></td>
-                    <td class="senna feature7"><span class="dot"></span></td>
-                    <td class="neva-elba feature7"><span class="dot"></span></td></td>
-                </tr>  
 
                 <tr data-feature="feature5">
-                    <td onclick="toggleFilter('feature5')">Hot pipes Insulation</td>
-                    <td class="smart-retail"></td>
+                    <td onclick="selectFeature('feature5')">
+                        Level Sensor on Oil Reserve
+                        <span class="info-icon" data-feature-id="feature5" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
+                    <td class="smart-retail feature5"><span class="dot"></span></td>
                     <td class="senna feature5"><span class="dot"></span></td>
-                    <td class="neva-elba feature5"><span class="dot"></span></td></td>
+                    <td class="neva-elba feature5"><span class="dot"></span></td>
                 </tr>
-            
+
+                <!-- Electrical devices -->
                 <tr class="separator">
                     <td colspan="4" style="text-align: left; font-weight: bold;">Electrical devices</td>
                 </tr>
-                <tr data-feature="feature8">
-                    <td onclick="toggleFilter('feature8')">Second inverter in the same stage</td>
-                    <td class="smart-retail"></td>
-                    <td class="senna feature8"><span class="dot"></span></td>
-                    <td class="neva-elba feature8"><span class="dot"></span></td></td>
+
+                <tr data-feature="feature6">
+                    <td onclick="selectFeature('feature6')">
+                        Second Inverter in the Same Stage
+                        <span class="info-icon" data-feature-id="feature6" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
+                    <td class="smart-retail feature6"><span class="dot"></span></td>
+                    <td class="senna feature6"><span class="dot"></span></td>
+                    <td class="neva-elba feature6"><span class="dot"></span></td>
                 </tr>
 
-                <tr data-feature="feature9">
-                    <td onclick="toggleFilter('feature9')">Inverter allowed brands</td>
-                    <td class="smart-retail">
+                <tr data-feature="feature7">
+                    <td onclick="selectFeature('feature7')">
+                        Inverter Allowed Brands
+                        <span class="info-icon" data-feature-id="feature7" onclick="event.stopPropagation(); showDialog(this)">
+                            ℹ️
+                        </span>
+                    </td>
+                    <td class="smart-retail feature7">
                         <select>
                             <option value="ABB">ABB</option>
                         </select>
                     </td>
-                    <td class="senna feature9">
+                    <td class="senna feature7">
                         <select>
                             <option value="ABB">ABB</option>
                             <option value="Danfoss">Danfoss</option>
                             <option value="Schneider">Schneider</option>
                         </select>
                     </td>
-                    <td class="neva-elba feature9">
+                    <td class="neva-elba feature7">
                         <select>
                             <option value="ABB">ABB</option>
                             <option value="Danfoss">Danfoss</option>
@@ -146,33 +161,15 @@
                     </td>
                 </tr>
 
-            
-                <!-- Add other rows up to feature10 -->
-
-                <tr class="separator">
-                    <td colspan="4" style="text-align: left; font-weight: bold;">Other</td>
-                </tr>
-            
-                <tr data-feature="feature11">
-                    <td onclick="toggleFilter('feature11')">Caratteristica 11</td>
-                    <td class="smart-retail feature11"><span class="dot"></span></td>
-                    <td class="senna"></td>
-                    <td class="neva-elba feature11"><span class="dot"></span></td>
-                </tr>
-                <!-- Add other rows from feature12 to feature20 -->
             </tbody>
         </table>
 
-
-
-
-
-        
         <div class="summary">
             <h2>Caratteristiche Selezionate</h2>
             <ul id="selectedFeatures"></ul>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
