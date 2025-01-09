@@ -99,6 +99,7 @@ td:hover {
 .active-feature {
     color: #005b96;
     font-weight: bold;
+    background-color: #d0ebff; /* Colore di evidenziazione */
 }
 
 .hidden {
