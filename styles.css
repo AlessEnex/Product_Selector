@@ -102,9 +102,11 @@ td {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/*
 td:hover {
     background-color: #f4f4f9;
 }
+*/
 
 .active-feature {
     color: #005b96;
