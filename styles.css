@@ -23,6 +23,16 @@ h2 {
     font-family: Arial, sans-serif;
 }
 
+.info-icon i {
+    font-size: 16px;
+    color: #005b96;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.info-icon i:hover {
+    color: #003f66;
+}
 
 .container {
     display: flex;
