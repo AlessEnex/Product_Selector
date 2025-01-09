@@ -17,16 +17,19 @@ fetch('features.json')
 
 // Funzione per attivare/disattivare una feature
 function toggleFilter(featureId) {
-    const featureCell = document.querySelector(`[onclick="toggleFilter('${featureId}')"]`);
+    // Seleziona la riga associata alla feature
+    const row = document.querySelector(`[data-feature="${featureId}"]`);
 
+    // Verifica se la riga è già attiva
     if (activeFilters.has(featureId)) {
         activeFilters.delete(featureId);
-        featureCell.classList.remove('active-feature');
+        row.classList.remove('active-feature');
     } else {
         activeFilters.add(featureId);
-        featureCell.classList.add('active-feature');
+        row.classList.add('active-feature');
     }
 
+    // Aggiorna la lista delle opzioni selezionate
     updateSummary();
 }
 
